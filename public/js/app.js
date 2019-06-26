@@ -2,22 +2,25 @@
 const searchForm = document.querySelector('form')
 const search = document.querySelector('input')
 
+const msg1 = document.querySelector('#msg1')
+const msg2 = document.querySelector('#msg2')
 
 searchForm.addEventListener('submit', (e) => {
     e.preventDefault()
-    document.querySelector('#msg1').textContent = ''
-    document.querySelector('#msg2').textContent = ''
+   
+    msg1.textContent = 'Loading...'
+    msg2.textContent = '';
 
     const location = search.value
     fetch('/weather?address=' + location).then(res => {
         res.json().then(data => {
             console.log(data)
             if (data.error) {
-                document.querySelector('#msg1').textContent = data.error
+                msg1.textContent = data.error
             }
             else {
-                document.querySelector('#msg1').textContent =  data.forecast
-                document.querySelector('#msg2').textContent =  data.address +', '+ data.location
+               msg1.textContent =  data.forecast
+               msg2.textContent =  data.location
             }
         })
     }).catch(err => {

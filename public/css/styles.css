@@ -36,3 +36,19 @@ header a{
 .main-content{
     flex-grow: 1;
 }
+.myImg{
+    width: 200px;
+}
+
+.btn {
+    padding: 6px;
+    background: #9E9E9E;
+    border: none;
+    color: #fff;
+    box-shadow: 0px 2px 3px #bbb;
+}
+
+.input{
+    border: 1px solid #bbb;
+    padding: 5px 5px;
+}

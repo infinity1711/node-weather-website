@@ -29,7 +29,8 @@ app.get('', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About Page',
-        name: 'Hiranmay'
+        name: 'Hiranmay',
+        message: 'This website is created by Hiranmay. Taking data from mapbox and darksky'
     })
 })
 app.get('/help', (req, res) => {
